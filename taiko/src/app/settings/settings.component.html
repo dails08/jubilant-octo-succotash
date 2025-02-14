@@ -1,1 +1,12 @@
-<p>settings works!</p>
+
+<form id="chapterList" [formGroup]="chaptersForm">
+
+  <div formArrayName="chapterOptions">
+    <div class="chapterRow" *ngFor="let chapter of chapterOptions.controls; let ix=index">
+      <input id="chapter-{{ix}}" type="checkbox">
+      <label for="chapter-{{ix}}">{{chapters[ix]}}</label>
+    </div>
+
+  </div>
+
+</form>
