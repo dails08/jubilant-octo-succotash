@@ -1,0 +1,16 @@
+<div class="primary">
+  <div class="vocab" (click)="hideReadingAndMeaning(); cs.cycleVocab()">
+    <div class="word">{{cs.currentVocab.kanji}}</div>
+    <div class="reading" [hidden]="readingHidden">{{cs.currentVocab.reading}}</div>
+    <div class="meaningVocab" [hidden]="meaningHidden">{{cs.currentVocab.meaning}}</div>
+  </div>
+  <div class="controls">
+    <div class="control" (click)="toggleReadingVisibility()">読み方</div>
+    <div class="control" (click)="summonListMenu()">リスト</div>
+    <div class="control" (click)="toggleMeaningVisibility()">意味</div>
+  </div>
+  <div class="grammar" (click)="cs.cycleGrammar()">
+    <div class="form">{{cs.currentGrammar.grammar}}</div>
+    <div class="source">{{cs.currentGrammar.chapter}}.{{cs.currentGrammar.point}}</div>
+  </div>
+</div>

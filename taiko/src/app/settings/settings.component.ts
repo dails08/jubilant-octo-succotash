@@ -12,7 +12,7 @@ import { ContentService } from '../content.service';
 export class SettingsComponent {
 
   constructor(
-    content: ContentService
+    cs: ContentService
   ) {
     this.chaptersForm = new FormGroup({
       chapterOptions: new FormArray(this.chapters.map((val, ix, arr) => {
