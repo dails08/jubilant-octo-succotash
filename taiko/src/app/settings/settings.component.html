@@ -1,12 +1,15 @@
+<div class="primary">
 
-<form id="chapterList" [formGroup]="chaptersForm">
+  <form id="chapterList" [formGroup]="chaptersForm">
 
-  <div formArrayName="chapterOptions">
-    <div class="chapterRow" *ngFor="let chapter of chapterOptions.controls; let ix=index">
-      <input id="chapter-{{ix}}" [formControlName]="ix" type="checkbox">
-      <label for="chapter-{{ix}}">L{{ix+1}}: {{chapters[ix]}}</label>
+    <div formArrayName="chapterOptions">
+      <div class="chapterRow" *ngFor="let chapter of chapterOptions.controls; let ix=index">
+        <input class="baseCheck" id="chapter-{{ix}}" [formControlName]="ix" type="checkbox">
+        <label class="chapterLabel" for="chapter-{{ix}}">L{{ix+1}}: {{chapters[ix]}}</label>
+      </div>
+
     </div>
 
-  </div>
+  </form>
 
-</form>
+</div>

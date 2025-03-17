@@ -1,0 +1,26 @@
+.primary {
+  // background-color: grey;
+}
+
+.baseCheck {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: black;
+  width: 2em;
+  height: 2em;
+  border: 0.15em solid black;
+  border-radius: 0.15em;
+  margin-right: 5px;
+  transform: translateY(0.6em);
+  &:checked {
+    background-color: blue;
+  }
+
+}
+
+.chapterLabel {
+  font-size: 15pt;
+  user-select: none;
+}
