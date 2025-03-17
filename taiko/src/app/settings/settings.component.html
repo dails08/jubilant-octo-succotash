@@ -3,8 +3,8 @@
 
   <div formArrayName="chapterOptions">
     <div class="chapterRow" *ngFor="let chapter of chapterOptions.controls; let ix=index">
-      <input id="chapter-{{ix}}" type="checkbox">
-      <label for="chapter-{{ix}}">{{chapters[ix]}}</label>
+      <input id="chapter-{{ix}}" [formControlName]="ix" type="checkbox">
+      <label for="chapter-{{ix}}">L{{ix+1}}: {{chapters[ix]}}</label>
     </div>
 
   </div>

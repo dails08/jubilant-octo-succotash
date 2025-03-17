@@ -40,11 +40,23 @@ export class ContentService {
    currentVocab: VocabularyPoint;
    currentGrammar: GrammarPoint;
 
+   updateChapters(chapters: number[]) {
+    this.updateGrammarChapters(chapters);
+    this.updateVocabularyChapters(chapters);
+    // this.cycleGrammar();
+    // this.cycleVocab();
+   }
 
+   updateGrammarChapters(chapters: number[]) {
+    this.currentGrammarList = this.getGrammarByChapterList(chapters);
+   }
    getGrammarByChapterList(chapters: number[]): GrammarPoint[] {
     return this.totalGrammarList.filter(elem => {return chapters.includes(elem.chapter)});
    }
 
+   updateVocabularyChapters(chapters: number[]) {
+    this.currentVocabList = this.getVocabularyByChapterList(chapters);
+   }
    getVocabularyByChapterList(chapters: number[]): VocabularyPoint[] {
     return this.totalVocabularyList.filter(elem => {return chapters.includes(elem.chapter)});
    }

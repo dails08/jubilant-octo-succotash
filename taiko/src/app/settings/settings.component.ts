@@ -14,11 +14,19 @@ export class SettingsComponent {
   constructor(
     cs: ContentService
   ) {
-    this.chaptersForm = new FormGroup({
-      chapterOptions: new FormArray(this.chapters.map((val, ix, arr) => {
-        return new FormControl('');
-      }))
-    });
+
+    this.chaptersForm.valueChanges.subscribe(formContent => {
+        console.log("Values changed");
+        console.log(this.chaptersForm.value.chapterOptions);
+        const newChapters: number[] = [];
+        for (const [ix, elem] of this.chaptersForm.value.chapterOptions!.entries()) {
+          if (elem) {
+            newChapters.push(ix + 1)
+          }
+        }
+        cs.updateChapters(newChapters);
+      })
+
   }
   chapters = [
     "日本の地理",
@@ -38,7 +46,13 @@ export class SettingsComponent {
     "世界と私の国の未来"
   ];
 
-  chaptersForm: FormGroup;
+  // chaptersForm: FormGroup;
+  chaptersForm = new FormGroup({
+    chapterOptions: new FormArray(this.chapters.map((val, ix, arr) => {
+      return new FormControl('');
+    }))
+  });
+
 
 
 

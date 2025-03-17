@@ -1,6 +1,7 @@
 <div class="primary">
   <div class="vocab" (click)="hideReadingAndMeaning(); cs.cycleVocab()">
     <div class="word">{{cs.currentVocab.kanji}}</div>
+    <div class="chapter">({{cs.currentVocab.chapter}}) </div>
     <div class="reading" [hidden]="readingHidden">{{cs.currentVocab.reading}}</div>
     <div class="meaningVocab" [hidden]="meaningHidden">{{cs.currentVocab.meaning}}</div>
   </div>
@@ -11,6 +12,6 @@
   </div>
   <div class="grammar" (click)="cs.cycleGrammar()">
     <div class="form">{{cs.currentGrammar.grammar}}</div>
-    <div class="source">{{cs.currentGrammar.chapter}}.{{cs.currentGrammar.point}}</div>
+    <div class="source">({{cs.currentGrammar.chapter}}.{{cs.currentGrammar.point}})</div>
   </div>
 </div>
