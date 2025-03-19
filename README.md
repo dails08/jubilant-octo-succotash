@@ -1,2 +1,1 @@
-# jubilant-octo-succotash
-A simple SPA to help Middlebury students practice grammar and vocabulary in social settings.
+Taiko is a simple, self-contained single page application to help Middlebury Japanese students practice grammar and vocabulary together with prompts from their phone.
